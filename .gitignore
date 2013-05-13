@@ -1,5 +1,13 @@
 *.class
 
+#Ä¿Â¼¹ýÂË#
+/WebRoot/WEB-INF/lib
+/WebRoot/userfiles
+/WebRoot/html/ext
+/WebRoot/html/plugin
+/WebRoot/editor
+
+
 # Package Files #
 *.jar
 *.war
