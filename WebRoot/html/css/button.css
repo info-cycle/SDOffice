@@ -1,0 +1,22 @@
+.btnSelect {	
+	width: 24px;
+	height: 24px;
+	border: 0;
+	background: url(../images/oa/bank.png) no-repeat;
+	margin-right: 0px;
+	color: #333;
+	text-align: center;
+	cursor: pointer;
+}
+.s-select{
+	background-position:0 -100px;
+	background:url(../images/oa/bank.png) no-repeat scroll 0 0 transparent;
+	cursor:pointer;
+	float:left;	
+	height:16px;
+	list-style:none outside none;	
+	margin-left: 5px;
+	margin-top: 10px;
+	padding:0 0 0 1.5em;
+	width:16px;
+}

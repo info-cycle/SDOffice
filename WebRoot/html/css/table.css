@@ -1,0 +1,32 @@
+/* CSS Document */
+    table.content_table1 {
+        border-collapse:collapse;border:none;
+	    border:solid #000 0px;
+    }
+    table.content_table1 td {
+        font-size:13px;	
+	    height:31px;
+	    font-family:"宋体";
+	    padding-left:3px;
+	    padding-top:2px;
+	    border: solid #000 1px;
+    }
+    table.pagetable {
+        border-collapse:collapse;border:none;
+	    border:solid #000 0px;
+    }
+
+    th.pageth {
+        font-size:14px;
+	    font-family:"宋体";
+	    padding-left:3px;
+	    height:35px;
+    }
+    td.pagetd {
+        font-size:13px;	
+	    height:31px;
+	    font-family:"宋体";
+	    padding-left:3px;
+	    padding-top:2px;
+	    border: solid #000 1px;
+    }

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="View_wf_process" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_wf_process_active" schema="dbo"
+		catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_wf_process_templete" schema="dbo"
+		catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_wf_active" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_wf_active_return" schema="dbo"
+		catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_wf_active_urge" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_ClientTemp" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_ClientTree" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="rowid" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_Client_Industry" schema="dbo"
+		catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_Id" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_EfficiencyWage" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="Task_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_GroupUser" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_ImplementPlan" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_IndustryTree" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="rowid" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_MMReport" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_TClient_Linkman" schema="dbo"
+		catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_Id" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_Task" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="rowid" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_TaskTemp" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_TaskTree" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="rowid" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_WageQuery" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_App_Org_Tree" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="rowid" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_CodeTree" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="rowid" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_CodeTreeTemp" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_TaskPM" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="OrderID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_TaskPersonnel" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="OrderID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_TaskQuery" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="Task_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_WageGrid" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_WagePage" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="View_Archive_Task" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+	<table name="view_apporguser" schema="dbo" catalog="SDOffice">
+		<primary-key>
+			<key-column name="F_ID" type="Integer" />
+		</primary-key>
+	</table>
+<table name="View_TaskItem" schema="dbo" catalog="SDOffice">
+	<primary-key>
+		<key-column name="F_process_id" type="Integer"/>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

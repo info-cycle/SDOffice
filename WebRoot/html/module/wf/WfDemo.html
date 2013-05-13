@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../ext/resources/css/ext-all.css"
+	type="text/css" />
+<link rel="stylesheet" href="../../ext/resources/css/ext-patch.css"
+	type="text/css" />
+<script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../../ext/ext-all.js"></script>
+<script type="text/javascript" src="../../js/utils.js"></script>
+<title>业务流程demo</title>
+<script type="text/javascript">
+	var processId;
+	function add(){
+		//起草
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/1/',
+			method:'POST',
+			params:{typeid:10005},
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					processId = responseArray.root;
+					showMessage(processId);
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.INFO
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+	function save(){
+		//更新
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/2/',
+			method:'POST',
+			params:{processId:45},
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					showMessage(responseArray.root);
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.INFO
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+	function commit(){
+		//提交给下一个办理人
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/3/',
+			method:'POST',
+			params:{processId:45,acceptUserId:4,aboveActId:22}, //第一次提交
+			//params:{processId:32,acceptUserId:5,aboveActId:3}, //第二次提交
+			//params:{processId:32,acceptUserId:5,aboveActId:5}, //打回后又提交
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					showMessage("提交成功！");
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.INFO
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+	function urge(){
+		//催办
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/4/',
+			method:'POST',
+			params:{activeId:22},
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					showMessage("催办成功！");
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.INFO
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+	function returnActive(){
+		//打回
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/5/',
+			method:'POST',
+			params:{activeId:23},
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					showMessage("打回成功！");
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.INFO
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+	function complete(){
+		//业务办理完成
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/6/',
+			method:'POST',
+			params:{activeId:6},
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					showMessage("成功办结！");
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.INFO
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+	
+	function archivedProcess(){
+		//归档
+		var mask = new Ext.LoadMask(Ext.getBody(), {
+			msg: '正在初始化数据，请稍候...',
+			removeMask: true
+		});
+		mask.show();
+		Ext.Ajax.request({
+			url:'/wf/demo/7/',
+			method:'POST',
+			params:{processId:32},
+			success : function(response){
+				mask.hide();
+				var responseArray = Ext.util.JSON.decode(response.responseText);
+				if(responseArray.success){
+					showMessage(responseArray.message);
+				}else{
+					Ext.MessageBox.show({
+						title:'系统提示',
+						msg:responseArray.message,
+						width:300,
+						buttons: Ext.Msg.OK,
+						icon: Ext.MessageBox.ERROR
+					});
+				}
+			},
+			failure : function() {
+				mask.hide();
+				showMessage('网络错误，连接失败！',true);
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div style="line-height:50px;background-color:#E1E1E1;cursor:pointer" onclick="add();">业务起草</div>
+    <div style="line-height:50px;background-color:#EFEFEF;cursor:pointer" onclick="save();">保存业务</div>
+    <div style="line-height:50px;background-color:#E1E1E1;cursor:pointer" onclick="commit();">提交业务</div>
+    <div style="line-height:50px;background-color:#EFEFEF;cursor:pointer" onclick="urge();">业务催办</div>
+    <div style="line-height:50px;background-color:#E1E1E1;cursor:pointer" onclick="returnActive();">业务打回</div>
+    <div style="line-height:50px;background-color:#EFEFEF;cursor:pointer" onclick="complete();">业务办结</div>
+    <div style="line-height:50px;background-color:#E1E1E1;cursor:pointer" onclick="archivedProcess();">业务归档</div>
+</body>
+</html>
